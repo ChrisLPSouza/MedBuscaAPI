@@ -1,0 +1,15 @@
+br\com\rm97465\obratech\model\ClientePF.class
+br\com\rm97465\obratech\model\Obra.class
+br\com\rm97465\obratech\model\Orcamento.class
+br\com\rm97465\obratech\repository\EmpreiteiraRepository.class
+br\com\rm97465\obratech\model\Cliente.class
+br\com\rm97465\obratech\webservice\UsuarioServiceController.class
+br\com\rm97465\obratech\controller\HomeController.class
+br\com\rm97465\obratech\ObratechApplication.class
+br\com\rm97465\obratech\webservice\EmpreiteiraServiceController.class
+br\com\rm97465\obratech\model\Empreiteira.class
+br\com\rm97465\obratech\webservice\ClienteServiceController.class
+br\com\rm97465\obratech\model\Usuario.class
+br\com\rm97465\obratech\repository\ClienteRepository.class
+br\com\rm97465\obratech\repository\UsuarioRepository.class
+br\com\rm97465\obratech\model\ClientePJ.class
