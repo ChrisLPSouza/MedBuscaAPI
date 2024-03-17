@@ -29,6 +29,7 @@ public class UsuarioService {
             if(usuario.getEmail() != null && ! usuario.getEmail().isEmpty()){
 
                 Usuario validUser = new Usuario();
+                validUser.setId(0);
                 validUser.setEmail(usuario.getEmail().trim());
                 validUser.setSenha(usuario.getSenha().trim());
                 this.usuarioRepository.save(validUser);
