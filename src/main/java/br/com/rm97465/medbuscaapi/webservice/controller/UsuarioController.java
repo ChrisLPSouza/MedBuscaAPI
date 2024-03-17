@@ -22,6 +22,11 @@ public class UsuarioController {
     public List<Usuario> listUsuario() {
         return usuarioService.listaUsuarios();
     }
+    @GetMapping("login")
+    public Usuario doLogin(@RequestBody Usuario usuario){
+        return usuarioService.doLogin(usuario);
+
+    }
     @PostMapping("cadastra")
     public String insertUsuario(@RequestBody Usuario usuario) {
         return usuarioService.cadastraUsuario(usuario);

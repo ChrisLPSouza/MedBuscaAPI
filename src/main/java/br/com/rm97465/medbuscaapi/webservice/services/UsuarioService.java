@@ -20,7 +20,6 @@ public class UsuarioService {
     }
 
     @Transactional
-
     public String cadastraUsuario(Usuario usuario) {
         String mensagem = "";
         if(this.usuarioRepository.findById(usuario.getId()).isPresent()){
@@ -57,5 +56,12 @@ public class UsuarioService {
         }
         return ResponseEntity.notFound().build();
     }
+    public Usuario doLogin(Usuario usuario){
 
+       Usuario user =  this.usuarioRepository.findByEmailAndSenha(usuario.getEmail().trim(), usuario.getSenha().trim());
+        if (user != null){
+            return user;
+        }
+        return null;
+    }
 }
