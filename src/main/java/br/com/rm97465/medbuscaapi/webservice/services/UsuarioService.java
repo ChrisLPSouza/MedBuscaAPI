@@ -22,11 +22,19 @@ public class UsuarioService {
     @Transactional
     public String cadastraUsuario(Usuario usuario) {
         String mensagem = "";
-        if(this.usuarioRepository.findById(usuario.getId()).isPresent()){
-            mensagem = "Já existe um usuário com esse número de id, tente novamente";
+        Usuario user = this.usuarioRepository.findUsuarioByEmail(usuario.getEmail());
+        if(user != null){
+            mensagem = "Usuário já existe!";
         } else {
-            this.usuarioRepository.save(usuario);
-            mensagem = "Usuário cadastrado com sucesso";
+            if(usuario.getEmail() != null && ! usuario.getEmail().isEmpty()){
+
+                Usuario validUser = new Usuario();
+                validUser.setEmail(usuario.getEmail().trim());
+                validUser.setSenha(usuario.getSenha().trim());
+                this.usuarioRepository.save(usuario);
+                mensagem = "Usuário cadastrado com sucesso";
+            }
+
         }
         return mensagem;
     }
