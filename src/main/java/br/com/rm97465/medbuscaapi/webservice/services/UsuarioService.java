@@ -56,14 +56,6 @@ public class UsuarioService {
         return this.usuarioRepository.findAll();
     }
 
-    @Transactional
-    public ResponseEntity<String> deletaUsuarioPorId(Integer id) {
-        if (this.usuarioRepository.existsById(id)){
-            this.usuarioRepository.deleteById(id);
-            return ResponseEntity.ok().build();
-        }
-        return ResponseEntity.notFound().build();
-    }
     public Usuario doLogin(Usuario usuario){
 
        Usuario user =  this.usuarioRepository.findByEmailAndSenha(usuario.getEmail().trim(), usuario.getSenha().trim());

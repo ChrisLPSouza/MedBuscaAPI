@@ -38,10 +38,4 @@ public class UsuarioController {
     }
 
 
-    //nome do parâmetro id tem que ser igual do método
-    @DeleteMapping("deleta/{id}")
-    public ResponseEntity<String> deleteUsuario(@PathVariable Integer id) {
-        return usuarioService.deletaUsuarioPorId(id);
-
-    }
 }
