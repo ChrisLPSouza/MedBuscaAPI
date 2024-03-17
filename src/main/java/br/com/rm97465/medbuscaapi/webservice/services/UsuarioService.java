@@ -31,7 +31,7 @@ public class UsuarioService {
                 Usuario validUser = new Usuario();
                 validUser.setEmail(usuario.getEmail().trim());
                 validUser.setSenha(usuario.getSenha().trim());
-                this.usuarioRepository.save(usuario);
+                this.usuarioRepository.save(validUser);
                 mensagem = "Usuário cadastrado com sucesso";
             }
 
