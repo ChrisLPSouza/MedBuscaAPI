@@ -42,9 +42,6 @@ public class UsuarioService {
     @Transactional
     public Usuario doLogin(Usuario usuario){
        Usuario user =  this.usuarioRepository.findByEmailAndSenha(usuario.getEmail().trim(), usuario.getSenha().trim());
-        if (user != null){
-            return user;
-        }
-        return null;
+        return user;
     }
 }

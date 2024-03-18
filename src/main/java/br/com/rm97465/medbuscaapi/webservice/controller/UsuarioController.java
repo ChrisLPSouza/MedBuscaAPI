@@ -22,7 +22,7 @@ public class UsuarioController {
     public List<Usuario> listUsuario() {
         return usuarioService.listaUsuarios();
     }
-    @GetMapping("login")
+    @PostMapping("login")
     public Usuario doLogin(@RequestBody Usuario usuario){
         return usuarioService.doLogin(usuario);
 
