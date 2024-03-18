@@ -28,14 +28,8 @@ public class UsuarioController {
 
     }
     @PostMapping("cadastra")
-    public String insertUsuario(@RequestBody Usuario usuario) {
+    public Usuario insertUsuario(@RequestBody Usuario usuario) {
         return usuarioService.cadastraUsuario(usuario);
     }
-    //@RequestBody representa um objeto com várias informações
-   @PutMapping("atualiza")
-    public String updateUsuario(@RequestBody Usuario usuario){
-        return usuarioService.atualizaUsuario(usuario);
-    }
-
 
 }

@@ -20,36 +20,18 @@ public class UsuarioService {
     }
 
     @Transactional
-    public String cadastraUsuario(Usuario usuario) {
-        String mensagem = "";
-        Usuario user = this.usuarioRepository.findUsuarioByEmail(usuario.getEmail());
-        if(user != null){
-            mensagem = "Usuário já existe!";
-        } else {
-            if(usuario.getEmail() != null && ! usuario.getEmail().isEmpty()){
-
-                Usuario validUser = new Usuario();
-                validUser.setId(0);
-                validUser.setEmail(usuario.getEmail().trim());
-                validUser.setSenha(usuario.getSenha().trim());
-                this.usuarioRepository.save(validUser);
-                mensagem = "Usuário cadastrado com sucesso";
+    public Usuario cadastraUsuario(Usuario usuario) {
+        Usuario exists = usuarioRepository.findUsuarioByEmail(usuario.getEmail());
+        if(exists == null) {
+            if(usuario.getEmail() != null && ! usuario.getEmail().isEmpty()) {
+                Usuario user = new Usuario();
+                user.setId(0);
+                user.setEmail(usuario.getEmail().trim());
+                user.setSenha(usuario.getSenha().trim());
+                return usuarioRepository.save(user);
             }
-
         }
-        return mensagem;
-    }
-
-    @Transactional
-    public String atualizaUsuario(Usuario usuario){
-        String mensagem = "";
-        if(this.usuarioRepository.findById(usuario.getId()).isPresent()){
-            this.usuarioRepository.save(usuario);
-            mensagem = "Usuário atualizado com sucesso";
-        } else {
-            mensagem = "Não foi encontrado nenhum usuário com esse número de id, tente novamente";
-        }
-        return mensagem;
+        return null;
     }
 
     @Transactional
@@ -57,8 +39,8 @@ public class UsuarioService {
         return this.usuarioRepository.findAll();
     }
 
+    @Transactional
     public Usuario doLogin(Usuario usuario){
-
        Usuario user =  this.usuarioRepository.findByEmailAndSenha(usuario.getEmail().trim(), usuario.getSenha().trim());
         if (user != null){
             return user;
