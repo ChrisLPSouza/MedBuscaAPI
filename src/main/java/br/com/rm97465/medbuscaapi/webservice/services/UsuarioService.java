@@ -23,14 +23,23 @@ public class UsuarioService {
     public Usuario cadastraUsuario(Usuario usuario) {
         Usuario exists = usuarioRepository.findUsuarioByEmail(usuario.getEmail());
         if(exists == null) {
-            if(usuario.getEmail() != null && ! usuario.getEmail().isEmpty()) {
+            if(usuario.getEmail() != null && usuario.getSenha() != null &&
+                    !usuario.getEmail().isEmpty() &&
+                    !usuario.getSenha().isEmpty() ) {
+
                 Usuario user = new Usuario();
                 user.setId(0);
                 user.setEmail(usuario.getEmail().trim());
                 user.setSenha(usuario.getSenha().trim());
-                return usuarioRepository.save(user);
+                Usuario saved = usuarioRepository.save(user);
+                saved.setUsuarioCriado(true);
+                return saved;
             }
+        }else {
+            exists.usuarioCriado(false);
+            return exists;
         }
+
         return null;
     }
 
@@ -41,7 +50,7 @@ public class UsuarioService {
 
     @Transactional
     public Usuario doLogin(Usuario usuario){
-       Usuario user =  this.usuarioRepository.findByEmailAndSenha(usuario.getEmail().trim(), usuario.getSenha().trim());
+        Usuario user =  this.usuarioRepository.findByEmailAndSenha(usuario.getEmail().trim(), usuario.getSenha().trim());
         return user;
     }
 }

@@ -11,10 +11,15 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "usuario")
     @Column(name = "cd_usuario")
     private Integer id;
+
     @Column(name = "ds_email", nullable = false)
     private String email;
+
     @Column(name = "ds_senha", nullable = false)
     private String senha;
+
+    @Column(name = "foi_registrado", nullable = false)
+    private boolean usuarioCriado;
 
     public int getId() {
         return id;
@@ -40,17 +45,34 @@ public class Usuario {
         this.senha = senha;
     }
 
+
+    public boolean isUsuarioCriado() {
+        return usuarioCriado;
+    }
+
+    public void setUsuarioCriado(boolean usuarioCriado) {
+        this.usuarioCriado = usuarioCriado;
+    }
+
+    public Usuario usuarioCriado(boolean usuarioCriado) {
+        this.usuarioCriado = usuarioCriado;
+        return this;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Usuario usuario = (Usuario) o;
-        return Objects.equals(id, usuario.id) && Objects.equals(email, usuario.email) && Objects.equals(senha, usuario.senha);
+        return usuarioCriado == usuario.usuarioCriado &&
+                Objects.equals(id, usuario.id) &&
+                Objects.equals(email, usuario.email) &&
+                Objects.equals(senha, usuario.senha);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, email, senha);
+        return Objects.hash(id, email, senha, usuarioCriado);
     }
 
     @Override
@@ -59,6 +81,7 @@ public class Usuario {
                 "id=" + id +
                 ", email='" + email + '\'' +
                 ", senha='" + senha + '\'' +
+                ", usuarioCriado=" + usuarioCriado +
                 '}';
     }
 }
