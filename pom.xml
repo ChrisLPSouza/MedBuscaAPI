@@ -58,11 +58,6 @@
     </dependency>
 
     <dependency>
-      <groupId>nz.net.ultraq.thymeleaf</groupId>
-      <artifactId>thymeleaf-layout-dialect</artifactId>
-    </dependency>
-
-    <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging</artifactId>
       <version>1.2</version>
@@ -122,6 +117,13 @@
       <groupId>javax.persistence</groupId>
       <artifactId>javax.persistence-api</artifactId>
       <version>2.2</version>
+    </dependency>
+
+    <!-- Thymeleaf dependencies -->
+
+    <dependency>
+      <groupId>nz.net.ultraq.thymeleaf</groupId>
+      <artifactId>thymeleaf-layout-dialect</artifactId>
     </dependency>
 
   </dependencies>
