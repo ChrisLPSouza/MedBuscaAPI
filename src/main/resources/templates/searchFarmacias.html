@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/assets/uikit/css/uikit.min.css}"/>
+    <script th:src="@{/assets/uikit/js/uikit.min.js}"></script>
+    <script th:src="@{/assets/uikit/js/uikit-icons.min.js}"></script>
+</head>
+<body>
+<h1 class="uk-text-lead uk-text-center">Welcome to my awesome application</h1>
+<h2 class="uk-text-center">Farmácias</h2>
+
+<ul class="uk-list uk-list-disc uk-list-primary uk-list-divider">
+    <li th:each="farmacia : ${farmacias}">
+        <span th:text="${farmacia.nome}"></span>
+    </li>
+</ul>
+
+</body>
+</html>

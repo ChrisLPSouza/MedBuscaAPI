@@ -11,15 +11,7 @@ public class Medicamento {
     @Column(name = "cd_medicamento")
     private Integer id;
     @Column(name = "nm_medicamento", nullable = false)
-    private String medicamento;
-
-   /* @ManyToMany(mappedBy = "listMedicamentos")
-    List<Farmacia> listFarmacias;*/
-    /*@ManyToMany
-    @JoinTable(
-            name = "farmacias_medicamento",
-            joinColumns = @JoinColumn(name = "medicamento_id"))
-    List<Farmacia> listFarmacias;*/
+    private String nome;
 
     public Integer getId() {
         return id;
@@ -29,11 +21,11 @@ public class Medicamento {
         this.id = id;
     }
 
-    public String getMedicamento() {
-        return medicamento;
+    public String getNome() {
+        return nome;
     }
 
-    public void setMedicamento(String medicamento) {
-        this.medicamento = medicamento;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 }

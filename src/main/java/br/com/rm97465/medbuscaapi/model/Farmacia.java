@@ -12,16 +12,17 @@ public class Farmacia {
     @Column(name = "cd_farmacia")
     private Integer id;
     @Column(name = "nm_farmacia", nullable = false)
-    private String farmacia;
+    private String nome;
     @Column(name = "ds_endereco", nullable = false)
     private String endereco;
     @Column(name = "ds_descricao", nullable = false)
     private String descricao;
 
-    /* @ManyToMany(mappedBy = "listFarmacias")
-     List<Medicamento> listMedicamentos;*/
     @ManyToMany
-    @JoinTable(name = "tb_med_medlist_farmacia")
+    @JoinTable(name = "tb_medicamentos_farmacia",
+            joinColumns = @JoinColumn(name = "cd_farmacia", referencedColumnName = "cd_farmacia"),
+            inverseJoinColumns =
+            @JoinColumn(name = "cd_medicamento", referencedColumnName = "cd_medicamento"))
     List<Medicamento> listMedicamentos;
 
     public Integer getId() {
@@ -32,12 +33,12 @@ public class Farmacia {
         this.id = id;
     }
 
-    public String getFarmacia() {
-        return farmacia;
+    public String getNome() {
+        return nome;
     }
 
-    public void setFarmacia(String farmacia) {
-        this.farmacia = farmacia;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getEndereco() {

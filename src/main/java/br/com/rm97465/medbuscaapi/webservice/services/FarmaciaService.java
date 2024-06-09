@@ -1,6 +1,7 @@
 package br.com.rm97465.medbuscaapi.webservice.services;
 
 import br.com.rm97465.medbuscaapi.model.Farmacia;
+import br.com.rm97465.medbuscaapi.model.Medicamento;
 import br.com.rm97465.medbuscaapi.model.Receita;
 import br.com.rm97465.medbuscaapi.repository.FarmaciaRepository;
 import br.com.rm97465.medbuscaapi.repository.ReceitaRepository;
@@ -29,5 +30,10 @@ public class FarmaciaService {
     @Transactional
     public List<Farmacia> listFarmacia() {
         return farmaciaRepository.findAll();
+    }
+
+    @Transactional
+    public List<Farmacia> listFarmaciaByMedicamento(String nomeMedicamento) {
+        return farmaciaRepository.findFarmaciaByMedicamento(nomeMedicamento);
     }
 }
