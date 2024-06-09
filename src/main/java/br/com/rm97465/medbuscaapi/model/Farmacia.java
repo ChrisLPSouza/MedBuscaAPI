@@ -21,8 +21,8 @@ public class Farmacia {
     /* @ManyToMany(mappedBy = "listFarmacias")
      List<Medicamento> listMedicamentos;*/
     @ManyToMany
-    @JoinTable(name = "medicamentos_farmacia")
-    List<Farmacia> listMedicamentos;
+    @JoinTable(name = "tb_med_medlist_farmacia")
+    List<Medicamento> listMedicamentos;
 
     public Integer getId() {
         return id;
@@ -56,11 +56,11 @@ public class Farmacia {
         this.descricao = descricao;
     }
 
-    public List<Farmacia> getListMedicamentos() {
+    public List<Medicamento> getListMedicamentos() {
         return listMedicamentos;
     }
 
-    public void setListMedicamentos(List<Farmacia> listMedicamentos) {
+    public void setListMedicamentos(List<Medicamento> listMedicamentos) {
         this.listMedicamentos = listMedicamentos;
     }
 }
