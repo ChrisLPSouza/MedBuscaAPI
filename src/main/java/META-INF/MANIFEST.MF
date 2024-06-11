@@ -1,0 +1,2 @@
+Manifest-Version: 1.0
+Main-Class: br.com.rm97465.medbuscaapi.MedBuscaAPIApplication

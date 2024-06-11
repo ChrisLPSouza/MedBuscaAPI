@@ -23,6 +23,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
+    <start-class>br.com.rm97465.medbuscaapi.MedBuscaAPIApplication</start-class>
   </properties>
 
   <dependencies>
