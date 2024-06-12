@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/assets/uikit/css/uikit.min.css}"/>
+    <script th:src="@{/assets/uikit/js/uikit.min.js}"></script>
+    <script th:src="@{/assets/uikit/js/uikit-icons.min.js}"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<h1 class="uk-text-lead uk-text-center">Home</h1>
+
+<form action="#" th:action="@{/farmacias{path}(path=${nomeMedicamento})}" method="get">
+    <h2>Farmácias perto de mim</h2>
+    <ul class="flex-outer">
+        <li><label for="nomeMedicamento">Onde tem</label> <input
+                type="text" name="nomeMedicamento" id="nomeMedicamento" required
+                th:value="${nomeMedicamento}"/></li>
+        <li>
+            <button type="submit">Buscar</button>
+        </li>
+    </ul>
+</form>
+
+<h2 class="uk-text-center">Minhas receitas</h2>
+<ul class="uk-list uk-list-disc uk-list-primary uk-list-divider">
+    <li th:each="receita : ${minhasReceitas}">
+        <span th:text="${receita.receita}"></span>
+    </li>
+
+</ul>
+<div class="d-grid gap-4">
+        <button type="button" class="btn btn-success btn-lg"><a href="/receita/open-form">Cadastrar</a></button>
+</div>
+
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

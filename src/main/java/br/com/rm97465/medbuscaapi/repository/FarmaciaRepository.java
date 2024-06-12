@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
 public interface FarmaciaRepository extends JpaRepository<Farmacia, Integer> {
 
     @Query(value = "SELECT * FROM TB_MED_FARMACIA FAR " +
