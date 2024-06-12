@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Built-By: anasa
+Build-Jdk: 17.0.4.1
+Implementation-Title: obratechRest
+Implementation-Version: 1.0-SNAPSHOT
+Implementation-Vendor-Id: br.com.rm97465
+Implementation-URL: https://mave.appache.org
+Created-By: Maven Integration for Eclipse
+
