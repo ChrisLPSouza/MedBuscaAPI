@@ -21,6 +21,10 @@ public class Receita {
     @Column(name = "e_usocontinuo", nullable = false)
     private Boolean usoContinuo;
 
+    public Receita() {
+        this.usoContinuo = false;
+    }
+
     public Integer getId() {
         return id;
     }

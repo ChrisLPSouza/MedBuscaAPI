@@ -1,17 +1,15 @@
 package br.com.rm97465.medbuscaapi.webservice.controller;
 
 import br.com.rm97465.medbuscaapi.model.Farmacia;
-import br.com.rm97465.medbuscaapi.model.Medicamento;
 import br.com.rm97465.medbuscaapi.webservice.services.FarmaciaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("api/farmacias")
-public class FarmaciaController {
+public class RestFarmaciaController {
     @Autowired
     private FarmaciaService farmaciaService;
 
