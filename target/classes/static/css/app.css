@@ -21,3 +21,28 @@ h3 {
 ul {
     list-style-type: none;
 }
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+/* home page */
+
+.home-search {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pharma-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+
+    > div {
+        display: flex;
+        justify-content: center;
+    }
+}

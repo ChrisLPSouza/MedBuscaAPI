@@ -36,4 +36,9 @@ public class FarmaciaService {
     public List<Farmacia> listFarmaciaByMedicamento(String nomeMedicamento) {
         return farmaciaRepository.findFarmaciaByMedicamento(nomeMedicamento);
     }
+
+    @Transactional
+    public List<Farmacia> cadastraListaFarmacias(List<Farmacia> farmaciasLista) {
+        return farmaciaRepository.saveAll(farmaciasLista);
+    }
 }

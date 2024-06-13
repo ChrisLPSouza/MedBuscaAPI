@@ -19,7 +19,7 @@ public class FarmaciaController {
 
     @GetMapping
     public String searchResults(@Param("nomeMedicamento") String nomeMedicamento, Model model) {
-        List<Farmacia> farmacias = farmaciaService.listFarmaciaByMedicamento(nomeMedicamento);
+        List<Farmacia> farmacias = farmaciaService.listFarmaciaByMedicamento(nomeMedicamento.toLowerCase());
         model.addAttribute("medicamento", nomeMedicamento);
         model.addAttribute("farmacias", farmacias);
         return "searchFarmacias";

@@ -25,6 +25,12 @@ public class MedicamentoService {
     }
 
     @Transactional
+    public List<Medicamento> cadastraListaMedicamentos(List<Medicamento> medicamentos) {
+        return medicamentoRepository.saveAll(medicamentos);
+    }
+
+
+    @Transactional
     public List<Medicamento> listMedicamento() {
         return medicamentoRepository.findAll();
     }

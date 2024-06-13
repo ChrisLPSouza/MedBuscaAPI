@@ -23,4 +23,9 @@ public class RestMedicamentoController {
         return medicamentoService.cadastraMedicamento(medicamento);
     }
 
+    @PostMapping("cadastraLista")
+    public List<Medicamento> insertListaMedicamentos(@RequestBody List<Medicamento> medicamentosLista) {
+        return medicamentoService.cadastraListaMedicamentos(medicamentosLista);
+    }
+
 }

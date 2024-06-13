@@ -7,24 +7,33 @@
     <link href="/css/app.css" rel="stylesheet">
 </head>
 <body>
-<h1>Farmácias</h1>
-<h2 th:text="'O medicamento ' + ${medicamento} + ' foi encontrado nas seguintes farmácias'"></h2>
-<div class="d-flex flex-wrap justify-content-between p-2">
-    <div class="card" style="width: 18rem;" th:each="farmacia : ${farmacias}">
-        <div class="card-body">
-            <ul>
-                <li>
-                    <h3 th:text="${farmacia.nome}"></h3>
-                </li>
-                <li>
-                    <span th:text="${farmacia.endereco}"></span>
-                </li>
-                <li>
-                    <span th:text="${farmacia.descricao}"></span>
-                </li>
-            </ul>
+    <h1>Farmácias</h1>
+    <div th:if="${#lists.isEmpty(farmacias)}">
+        <h2 th:text="'O medicamento ' + ${medicamento} + ' não foi encontrado em nenhuma farmácia'"></h2>
+    </div>
+    <div th:unless="${#lists.isEmpty(farmacias)}">
+        <h2 th:text="'O medicamento ' + ${medicamento} + ' foi encontrado nas seguintes farmácias'"></h2>
+    </div>
+    <div class="d-flex flex-wrap justify-content-between p-2">
+        <div class="card" style="width: 18rem;" th:each="farmacia : ${farmacias}">
+            <div class="card-body">
+                <ul>
+                    <li>
+                        <h3 th:text="${farmacia.nome}"></h3>
+                    </li>
+                    <li>
+                        <span th:text="${farmacia.endereco}"></span>
+                    </li>
+                    <li>
+                        <span th:text="${farmacia.descricao}"></span>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
+</div>
+<div class="d-grid gap-4">
+    <button type="button" class="btn btn-success btn-lg"><a href="/">Home</a></button>
 </div>
 </body>
 </html>
