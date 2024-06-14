@@ -90,13 +90,13 @@ footer {
 
 /* home page */
 
-.home-search {
+.home-search, .ordinance-block {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.pharma-form {
+.pharma-form, .ordinance-form {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

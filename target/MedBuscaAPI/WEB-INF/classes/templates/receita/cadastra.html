@@ -1,68 +1,66 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-<!--  <link rel="stylesheet" th:href="@{/assets/uikit/css/uikit.min.css}"/>-->
-<!--  <script th:src="@{/assets/uikit/js/uikit.min.js}"></script>-->
-<!--  <script th:src="@{/assets/uikit/js/uikit-icons.min.js}"></script>-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
 </head>
 <body>
 
 <div class="alert alert-success mt-2" role="alert" th:if="${msg != null}" th:text="${msg}">
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 
-<h1 class="uk-text-center">Cadastrar Receita</h1>
+<h1>Cadastrar Receita</h1>
 
 <form class="row g-3 needs-validation was-validated" novalidate=""
       action="/receita/submit-form" th:object="${newReceita}" method="post">
 
 
-  <div class="col-first col-6">
-    <input type="text" th:field="*{receita}" class="form-control" id="validationCustom01"
-           placeholder="Nome da Receita" required="">
-    <div class="invalid-feedback">
-      Nome da Receita
+    <div class="col-first col-6">
+        <input type="text" th:field="*{receita}" class="form-control" id="validationCustom01"
+               placeholder="Nome da Receita" required="">
+        <div class="invalid-feedback">
+            Nome da Receita
+        </div>
     </div>
-  </div>
 
 
-  <div class="col-first col-6">
-    <input type="text"th:field="*{medicamento}" class="form-control" id="validationCustom02"
-           placeholder="Medicamento" required="">
-    <div class="invalid-feedback">
-      Nome do Medicamento
+    <div class="col-first col-6">
+        <input type="text" th:field="*{medicamento}" class="form-control" id="validationCustom02"
+               placeholder="Medicamento" required="">
+        <div class="invalid-feedback">
+            Nome do Medicamento
+        </div>
     </div>
-  </div>
 
 
-  <div class="col-3">
-    <input type="text" th:field="*{data}" class="form-control" id="validationCustom03"
-           placeholder="Data de Emissão" required="">
-    <div class="invalid-feedback">
-      Data da Emissão
+    <div class="col-3">
+        <input type="text" th:field="*{data}" class="form-control" id="validationCustom03"
+               placeholder="Data de Emissão" required="">
+        <div class="invalid-feedback">
+            Data da Emissão
+        </div>
     </div>
-  </div>
 
-  <!-- valor -->
-  <div class="col-3">
-    <input type="text" th:field="*{posologia}" class="form-control" id="validationCustom04"
-           placeholder="Posologia" required="">
-    <div class="invalid-feedback">
-      Posologia
+    <!-- valor -->
+    <div class="col-3">
+        <input type="text" th:field="*{posologia}" class="form-control" id="validationCustom04"
+               placeholder="Posologia" required="">
+        <div class="invalid-feedback">
+            Posologia
+        </div>
     </div>
-  </div>
 
 
-  <div class="col-6">
-    <button class="btn btn-primary" type="submit">Cadastrar</button>
-  </div>
+    <div class="col-6">
+        <button class="btn btn-primary" type="submit">Cadastrar</button>
+    </div>
 </form>
 
 <div class="d-grid gap-4">
-  <button type="button" class="btn btn-success btn-lg"><a href="/">Home</a></button>
+    <button type="button" class="btn btn-success btn-lg"><a href="/">Home</a></button>
 </div>
 
 <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
