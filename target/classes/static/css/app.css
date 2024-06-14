@@ -102,7 +102,7 @@ footer {
     justify-content: center;
 }
 
-.pharma-form {
+.pharma-form, .ordinance-form {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -118,6 +118,7 @@ footer {
         justify-content: center;
     }
 }
+<<<<<<< HEAD
 
 button {
     background-color: rgba(0,142,255,1);
@@ -230,3 +231,5 @@ button {
   border-radius: 50%;
   transition: all .5s ease;
 }
+=======
+>>>>>>> 758f43b0c0d633b04e93c55db91089da64b476ce
