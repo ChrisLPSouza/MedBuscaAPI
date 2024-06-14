@@ -7,6 +7,7 @@
     <link href="/css/app.css" rel="stylesheet">
 </head>
 <body>
+<main class="site-content">
 <div th:insert="fragments/header :: header"></div>
 
 <h2>Home</h2>
@@ -16,48 +17,52 @@
 </form>
 
 <div class="home-search p-2">
-    <form action="/farmacias" method="get" class="pharma-form p-2">
+    <form action="/farmacias" method="get" class="pharma-form">
         <h2>Farmácias perto de mim</h2>
-        <div class="p-2">
+        <div class="input-container">
+            <input type="text" name="nomeMedicamento" id="nomeMedicamento" required th:value="${nomeMedicamento}"/>
             <label for="nomeMedicamento">Onde tem meu remédio?</label>
         </div>
         <div class="p-2">
-            <input type="text" name="nomeMedicamento" id="nomeMedicamento" required th:value="${nomeMedicamento}"/>
-        </div>
-        <div class="p-2">
-            <button type="submit" class="btn btn-success">Buscar</button>
+            <button type="submit">Buscar</button>
         </div>
     </form>
 </div>
 
 <h2>Minhas receitas</h2>
-<div class="d-flex flex-wrap justify-content-center p-2">
-    <div class="card" style="width: 18rem;" th:each="receita : ${minhasReceitas}">
-        <div class="card-body">
-            <ul>
-                <li>
-                    <h3 th:text="${receita.receita}"></h3>
-                </li>
-                <li>
-                    <span th:text="${receita.data}"></span>
-                </li>
-                <li>
-                    <span th:text="${receita.medicamento}"></span>
-                </li>
-                <li>
-                    <span th:text="${receita.posologia}"></span>
-                </li>
-                <li>
-                    <span th:if="${receita.usoContinuo}">Uso contínuo</span>
-                </li>
-            </ul>
+
+<div class="format-container">
+    <div class="card-box">
+        <div class="cards-list" th:each="receita : ${minhasReceitas}">
+            <div class="card-body">
+                <div class="card-bg"></div>
+
+                <div class="card-title">
+                    <ul class="card-body-details">
+                        <li>
+                            <h3 th:text="${receita.nome}"></h3>
+                        </li>
+                        <li>
+                            <span th:text="${receita.data}"></span>
+                        </li>
+                        <li>
+                            <span th:text="${receita.medicamento}"></span>
+                        </li>
+                        <li>
+                            <span th:text="${receita.posologia}"></span>
+                        </li>
+                        <li>
+                            <span th:if="${receita.usoContinuo}">Uso contínuo</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-
-<div class="d-grid gap-4">
-    <button type="button" class="btn btn-success btn-lg"><a href="/receita/open-form">Cadastrar</a></button>
+<div class="general-button">
+    <a href="/receita/open-form" class="button">Cadastrar</a>
 </div>
 
 <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
@@ -65,7 +70,7 @@
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
         crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
+</main>
 <div th:insert="fragments/footer :: footer"></div>
 
 </body>
