@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.util.List;
-
 @Controller
 @RequestMapping("receita")
 public class ReceitaController {
@@ -21,25 +19,26 @@ public class ReceitaController {
     private ReceitaService receitaService;
 
     @GetMapping("listar")
-    public String list(Model model){
+    public String list(Model model) {
 
         model.addAttribute("minhasReceitas", receitaService.listReceita());
         return "home";
     }
 
     @GetMapping("open-form")
-    public String openForm (Model model) {
+    public String openForm(Model model) {
 
         model.addAttribute("newReceita", new Receita());
 
         return "receita/cadastra";
     }
+
     @PostMapping("submit-form")
-    public String submitForm(@ModelAttribute Receita receita, Model model, RedirectAttributes redirect){
+    public String submitForm(@ModelAttribute Receita receita, Model model, RedirectAttributes redirect) {
 
         receitaService.cadastraReceita(receita);
 
-        redirect.addFlashAttribute("msg", receita.getReceita().toUpperCase() +",\ncadastrado com sucesso");
+        redirect.addFlashAttribute("msg", receita.getNome().toUpperCase() + ",\ncadastrado com sucesso");
         return "redirect:listar";
     }
 }

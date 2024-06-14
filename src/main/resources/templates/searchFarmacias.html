@@ -7,6 +7,7 @@
     <link href="/css/app.css" rel="stylesheet">
 </head>
 <body>
+    <div th:insert="fragments/header :: header"></div>
     <h1>Farmácias</h1>
     <div th:if="${#lists.isEmpty(farmacias)}">
         <h2 th:text="'O medicamento ' + ${medicamento} + ' não foi encontrado em nenhuma farmácia'"></h2>
@@ -33,7 +34,8 @@
     </div>
 </div>
 <div class="d-grid gap-4">
-    <button type="button" class="btn btn-success btn-lg"><a href="/">Home</a></button>
+    <button type="button"><a href="/">Home</a></button>
 </div>
+<div th:insert="fragments/footer :: footer"></div>
 </body>
 </html>

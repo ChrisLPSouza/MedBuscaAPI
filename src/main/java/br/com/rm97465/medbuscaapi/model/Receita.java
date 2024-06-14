@@ -11,7 +11,7 @@ public class Receita {
     @Column(name = "cd_receita")
     private Integer id;
     @Column(name = "nm_receita", nullable = false)
-    private String receita;
+    private String nome;
     @Column(name = "ds_medicamento", nullable = false)
     private String medicamento;
     @Column(name = "data", nullable = false)
@@ -33,12 +33,12 @@ public class Receita {
         this.id = id;
     }
 
-    public String getReceita() {
-        return receita;
+    public String getNome() {
+        return nome;
     }
 
-    public void setReceita(String receita) {
-        this.receita = receita;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getMedicamento() {

@@ -1,5 +1,6 @@
 body{
    padding: 2px;
+   min-height: 900px;
 }
 
 h1, h2, h3 {
@@ -12,6 +13,7 @@ h1 {
 
 h2 {
     font-size: 1.3rem;
+    padding: 1rem 0 1rem 0;
 }
 
 h3 {
@@ -43,7 +45,7 @@ header {
 	padding: 24px;
 	color: #FFF;
 	text-shadow: 1px 1px 1px #333;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(32,75,87,1) 0%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(21,18,88,1) 0%, rgba(0,142,255,1) 100%);
     display: flex;
     justify-content: center;
     align-item: center;
@@ -62,11 +64,13 @@ footer {
 }
 
 .footer-container {
-    background-color: rgba(0,212,255,1);
+    background-color: rgba(0, 142, 255, 1);
+    display: flex;
+    justify-content: center;
+    padding: 0.4rem;
 }
 
 .img-footer {
-    padding-top: 2%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -82,7 +86,8 @@ footer {
 .footer-copyright {
     display: flex;
     justify-content: center;
-    background-color: rgba(18,73,88,1);
+    padding: 0.7rem;
+    background-color: rgba(21,18,88,1);
 
     > p {
         color: white;
@@ -91,7 +96,7 @@ footer {
 
 /* home page */
 
-.home-search {
+.home-search, .ordinance-block {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -102,9 +107,126 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: column;
+    border: 0.5px solid rgba(21, 18, 88, 1);
+    border-radius: 4%;
+    padding: 3rem;
+    background-color: #f8f9fa;
+    box-shadow: 5px 3px 3px rgba(21, 18, 88, 1);
 
     > div {
         display: flex;
         justify-content: center;
     }
+}
+
+button {
+    background-color: rgba(0,142,255,1);
+    width: 10rem;
+    border-radius: 0.375rem;
+    text-align: center;
+    color: white;
+    border:none;
+    height: 2.5rem;
+}
+
+.input-container{
+	position:relative;
+	margin-bottom:25px;
+}
+
+.input-container label{
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-size:16px;
+	color:black;
+    pointer-event:none;
+	transition: all 0.5s ease-in-out;
+}
+
+.input-container input{
+  border:0;
+  border-bottom:1px solid #555;
+  background:transparent;
+  width:100%;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color:#fff;
+}
+
+.input-container input:focus{
+ border:none;
+ outline:none;
+ border-bottom:1px solid #e74c3c;
+}
+
+.input-container input:focus ~ label,
+.input-container input:valid ~ label{
+	top:-12px;
+	font-size:12px;
+}
+
+.card-box {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px 0;
+}
+
+.cards-list {
+  margin: 0 15px 30px;
+  overflow: hidden;
+  border-radius: 28px;
+  width: 30%;
+  height: 30%
+}
+
+.card-body {
+  padding: 30px 20px;
+  background-color: #4b4275;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-body:hover,
+.card-body:hover {
+  text-decoration: none;
+  color: #FFF;
+}
+
+.card-body:hover .card-bg {
+  transform: scale(15);
+}
+
+.card-title {
+  min-height: 87px;
+  overflow: hidden;
+  font-size: 20px;
+  color: #FFF;
+  z-index: 2;
+  position: relative;
+}
+
+.ag-courses-item_date-box {
+  font-size: 18px;
+  color: #FFF;
+  z-index: 2;
+  position: relative;
+}
+
+.ag-courses-item_date {
+  font-weight: bold;
+  color: #f9b234;
+  transition: color .5s ease
+}
+
+.card-bg {
+  height: 128px;
+  width: 128px;
+  background-color: #86b7fe;
+  z-index: 1;
+  position: absolute;
+  top: -75px;
+  right: -75px;
+  border-radius: 50%;
+  transition: all .5s ease;
 }
