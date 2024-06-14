@@ -29,6 +29,16 @@ a {
     text-decoration: none;
 }
 
+a:focus {
+    text-decoration: none;
+}
+
+.general-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 /* header */
 header {
     width: 100%;
@@ -118,9 +128,8 @@ footer {
         justify-content: center;
     }
 }
-<<<<<<< HEAD
 
-button {
+button, a.button {
     background-color: rgba(0,142,255,1);
     width: 10rem;
     border-radius: 0.375rem;
@@ -128,6 +137,7 @@ button {
     color: white;
     border:none;
     height: 2.5rem;
+    padding-top: 6px;
 }
 
 .input-container{
@@ -152,13 +162,13 @@ button {
   width:100%;
   padding:8px 0 5px 0;
   font-size:16px;
-  color:#fff;
+  color:black;
 }
 
 .input-container input:focus{
  border:none;
  outline:none;
- border-bottom:1px solid #e74c3c;
+ border-bottom:1px solid rgba(21, 18, 88, 1);
 }
 
 .input-container input:focus ~ label,
@@ -231,5 +241,4 @@ button {
   border-radius: 50%;
   transition: all .5s ease;
 }
-=======
->>>>>>> 758f43b0c0d633b04e93c55db91089da64b476ce
+
